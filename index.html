@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DK Timber | South American Hardwood &amp; Lumber Sourcing</title>
+<style>
+        :root {
+            --primary: #1b3015;
+            --primary-accent: #2d4a22;
+            --gold: #c59b27;
+            --sand: #f4efea;
+            --dark: #1a1a1a;
+            --text-muted: #555555;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--sand);
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+        }
+
+        .logo span { color: var(--gold); }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1.8rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(15, 26, 12, 0.75), rgba(15, 26, 12, 0.75)), url('wp-content/uploads/2026/08/South-America-Lumber-Sourcing.jpeg') center/cover no-repeat;
+            color: #fff;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d8aa32;
+            transform: translateY(-2px);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+
+        /* Value & Expertise Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-accent);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* How It Works Steps */
+        .process-section {
+            background: #fff;
+            padding: 5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            position: relative;
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Image Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            background: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p { color: #cccccc; margin-top: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.8rem; }
+        }
+    </style>
+<meta content="Direct-from-mill South American hardwood and lumber sourcing for builders, distributors and craftsmen: species matching, on-site quality control and logistics." name="description"/><style>.contato-dk{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:1.5rem 0 .5rem}.contato-dk .contato-wa{background:#25D366;color:#fff}.contato-dk .contato-mail{background:var(--gold);color:#1a1a1a}.contato-dk .contato-linha{flex-basis:100%;font-size:.9rem;margin-top:.5rem}.contato-dk .contato-linha a{color:#fff}.seletor-idiomas{top:auto!important;bottom:16px!important;left:12px!important;right:auto!important}</style><link href="https://diegodkrd-del.github.io/dktimber/" rel="canonical"/><link href="https://diegodkrd-del.github.io/dktimber/" hreflang="en" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/pt/" hreflang="pt-BR" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/es/" hreflang="es" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/de/" hreflang="de" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/fr/" hreflang="fr" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/it/" hreflang="it" rel="alternate"/><style id="estatico-extra">
+.seletor-idiomas{all:initial;position:fixed;top:10px;right:10px;z-index:99998;display:flex;gap:2px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.12);border-radius:999px;padding:3px 5px;font:600 11px/1 system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.seletor-idiomas a{all:initial;cursor:pointer;font:600 11px/1 system-ui,sans-serif;color:#333;text-decoration:none;padding:5px 6px;border-radius:999px}
+.seletor-idiomas a[aria-current]{background:#333;color:#fff}
+.seletor-idiomas a:hover{text-decoration:underline}
+.wa-flutuante{position:fixed;right:16px;bottom:16px;z-index:99999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.bloco-whatsapp{display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:20px;border:1px solid rgba(0,0,0,.1);border-radius:12px}
+.bloco-whatsapp .botao-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff!important;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600}
+@media (max-width:768px){.seletor-idiomas{top:auto;bottom:16px;left:12px;right:auto}}
+</style></head>
+<body><div aria-label="Language" class="seletor-idiomas" role="navigation"><a aria-current="true" href="" hreflang="en" lang="en" title="English">EN</a><a href="pt/" hreflang="pt-BR" lang="pt-BR" title="Português">PT</a><a href="es/" hreflang="es" lang="es" title="Español">ES</a><a href="de/" hreflang="de" lang="de" title="Deutsch">DE</a><a href="fr/" hreflang="fr" lang="fr" title="Français">FR</a><a href="it/" hreflang="it" lang="it" title="Italiano">IT</a></div>
+<header>
+<a class="logo" href="#">DK <span>TIMBER</span></a>
+<nav>
+<a href="#about">About Us</a>
+<a href="#process">How It Works</a>
+<a href="#expertise">Species Matching</a>
+<a href="#gallery">Sourcing Gallery</a>
+<a href="#contact">Get Quote</a>
+</nav>
+</header>
+<section class="hero">
+<h1>The Right Wood for the Right Application</h1>
+<p>Bypassing middleman markups to bring commercial builders, distributors, and craftsmen high-performance South American lumber direct from the mill.</p>
+<a class="btn" href="#process">Explore Our Process</a>
+</section>
+<main class="container">
+
+<section id="about">
+<div class="section-header">
+<h2 class="section-title">Direct-From-Mill Hardwood Sourcing</h2>
+<p class="section-subtitle">
+                    Buying timber without expert technical oversight often leads to high scrap rates, warp, and inflated costs. We bridge the gap between South American forestry mills and North American buyers to ensure structural integrity and maximum yield.
+                </p>
+</div>
+<div class="grid-3">
+<div class="card">
+<h3>Precision Application Matching</h3>
+<p>Every construction project requires specific Janka hardness values, bending strength (MOR), and natural rot resistance. We match your architectural requirements to the exact South American hardwood species that meets specifications without over-budgeting.</p>
+</div>
+<div class="card">
+<h3>Eliminating Middleman Costs</h3>
+<p>Standard lumber import chains pass through multiple regional brokers, importers, and distributors before hitting your yard. We negotiate container-load rates straight from partner mills, cutting intermediate markups by up to 30%.</p>
+</div>
+<div class="card">
+<h3>Rigorous Quality Auditing</h3>
+<p>Our team conducts physical on-site inspections prior to container loading. We verify moisture content thresholds, grade compliance, precise board dimensions, and proper kiln drying techniques.</p>
+</div>
+</div>
+</section>
+
+<section class="process-section" id="process">
+<div class="section-header">
+<h2 class="section-title">How Our Sourcing Process Works</h2>
+<p class="section-subtitle">From initial structural specifications to direct yard delivery, our end-to-end management keeps your projects fully stocked and within budget.</p>
+</div>
+<div class="process-steps">
+<div class="step">
+<div class="step-number">01</div>
+<h4>Project Consultation</h4>
+<p>We analyze your build requirements, structural loads, weather exposure, and aesthetic targets to determine the ideal timber profile.</p>
+</div>
+<div class="step">
+<div class="step-number">02</div>
+<h4>Direct Mill Selection</h4>
+<p>We negotiate container-load supply directly with certified South American sawmills, securing volume discounts and strict grading guarantees.</p>
+</div>
+<div class="step">
+<div class="step-number">03</div>
+<h4>On-Site Quality Control</h4>
+<p>Before loading, every batch undergoes hands-on inspection for moisture content, core integrity, square cuts, and sustainable harvesting compliance.</p>
+</div>
+<div class="step">
+<div class="step-number">04</div>
+<h4>Logistics &amp; Yard Delivery</h4>
+<p>We manage all customs clearances, port tariffs, and flatbed transport directly to your job site or regional distribution yard.</p>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="section-header">
+<h2 class="section-title">Field Inspection &amp; Inventory Gallery</h2>
+<p class="section-subtitle">A look into our direct South American mill operations, timber inspections, and container preparation.</p>
+</div>
+<div class="gallery-grid">
+<div class="gallery-card">
+<img alt="Hardwood Inspection" decoding="async" src="wp-content/uploads/2026/08/South-America-Lumber-Sourcing-2.jpeg"/>
+<div class="gallery-caption">Direct Timber Selection &amp; Grading</div>
+</div>
+<div class="gallery-card">
+<img alt="Lumber Stockpile" decoding="async" src="wp-content/uploads/2026/08/South-America-Lumber-Sourcing-3.jpeg"/>
+<div class="gallery-caption">Kiln-Dried Stock Inventory</div>
+</div>
+<div class="gallery-card">
+<img alt="Density Check" decoding="async" src="wp-content/uploads/2026/08/South-America-Lumber-Sourcing-4.jpeg"/>
+<div class="gallery-caption">Density &amp; Grain Testing</div>
+</div>
+<div class="gallery-card">
+<img alt="Hardwood Stacks" decoding="async" src="wp-content/uploads/2026/08/South-America-Lumber-Sourcing-5.jpeg"/>
+<div class="gallery-caption">Export-Ready Palletized Stacks</div>
+</div>
+<div class="gallery-card">
+<img alt="Mill Cutting" decoding="async" src="wp-content/uploads/2026/08/South-America-Lumber-Sourcing-6.jpeg"/>
+<div class="gallery-caption">Mill Dimensional Sawing</div>
+</div>
+<div class="gallery-card">
+<img alt="Log Sorting" decoding="async" src="wp-content/uploads/2026/08/South-America-Lumber-Sourcing-7.jpeg"/>
+<div class="gallery-caption">Raw Log Quality Assessment</div>
+</div>
+<div class="gallery-card">
+<img alt="Board Quality Inspection" decoding="async" src="wp-content/uploads/2026/08/South-America-Lumber-Sourcing-8.jpeg"/>
+<div class="gallery-caption">Surface Finish &amp; Edge Verification</div>
+</div>
+<div class="gallery-card">
+<img alt="Container Packing" decoding="async" src="wp-content/uploads/2026/08/South-America-Lumber-Sourcing-9.jpeg"/>
+<div class="gallery-caption">Freight Container Loading Prep</div>
+</div>
+<div class="gallery-card">
+<img alt="Field Logistics" decoding="async" src="wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.24.jpeg"/>
+<div class="gallery-caption">Field Harvest Oversight</div>
+</div>
+<div class="gallery-card">
+<img alt="Timber Shipment" decoding="async" src="wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.25.jpeg"/>
+<div class="gallery-caption">Port Shipping Preparation</div>
+</div>
+<div class="gallery-card">
+<img alt="Plywood &amp; Board Check" decoding="async" src="wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.25-1.jpeg"/>
+<div class="gallery-caption">Panel Bond &amp; Void Verification</div>
+</div>
+<div class="gallery-card">
+<img alt="Final Staging Yard" decoding="async" src="wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.26.jpeg"/>
+<div class="gallery-caption">Staging Yard Delivery</div>
+</div>
+</div>
+</section>
+</main>
+<footer id="contact">
+<h3 style="margin-bottom: 0.5rem; color: #fff;">Ready to optimize your lumber supply chain?</h3>
+<p>Contact DK Timber today to request a landed quote for your next container load.</p>
+<div class="contato-dk"><a class="btn contato-wa" href="https://wa.me/5551991074142?text=Hello%20DK%20Timber%21%20I%27d%20like%20a%20quote%20for%20South%20American%20lumber." rel="noopener" target="_blank">Request a quote on WhatsApp</a><a class="btn contato-mail" href="mailto:kasper@dktimber.com?subject=Quote%20request%20%E2%80%94%20DK%20Timber">Email kasper@dktimber.com</a><p class="contato-linha">WhatsApp +55 51 99107-4142 · <a href="mailto:kasper@dktimber.com">kasper@dktimber.com</a></p></div><p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--gold);">© 2026 DK Timber. All Rights Reserved.</p>
+</footer>
+<a aria-label="Chat with DK Timber on WhatsApp" class="wa-flutuante" href="https://wa.me/5551991074142?text=Hello%20DK%20Timber%21%20I%27d%20like%20a%20quote%20for%20South%20American%20lumber." rel="noopener" target="_blank" title="Chat with DK Timber on WhatsApp"><svg aria-hidden="true" fill="#fff" height="30" viewbox="0 0 24 24" width="30"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01Z"></path></svg></a></body>
+</html>

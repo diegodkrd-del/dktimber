@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DK Timber | Suministro de maderas duras y madera aserrada de Sudamérica</title>
+<style>
+        :root {
+            --primary: #1b3015;
+            --primary-accent: #2d4a22;
+            --gold: #c59b27;
+            --sand: #f4efea;
+            --dark: #1a1a1a;
+            --text-muted: #555555;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--sand);
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+        }
+
+        .logo span { color: var(--gold); }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1.8rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(15, 26, 12, 0.75), rgba(15, 26, 12, 0.75)), url('../wp-content/uploads/2026/08/South-America-Lumber-Sourcing.jpeg') center/cover no-repeat;
+            color: #fff;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d8aa32;
+            transform: translateY(-2px);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+
+        /* Value & Expertise Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-accent);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* How It Works Steps */
+        .process-section {
+            background: #fff;
+            padding: 5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            position: relative;
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Image Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            background: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p { color: #cccccc; margin-top: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.8rem; }
+        }
+    </style>
+<meta content="Suministro de maderas duras y madera aserrada sudamericana directo del aserradero para constructoras, distribuidores y artesanos: selección de especies, control de calidad en origen y logística." name="description"/><style>.contato-dk{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:1.5rem 0 .5rem}.contato-dk .contato-wa{background:#25D366;color:#fff}.contato-dk .contato-mail{background:var(--gold);color:#1a1a1a}.contato-dk .contato-linha{flex-basis:100%;font-size:.9rem;margin-top:.5rem}.contato-dk .contato-linha a{color:#fff}.seletor-idiomas{top:auto!important;bottom:16px!important;left:12px!important;right:auto!important}</style><link href="https://diegodkrd-del.github.io/dktimber/es/" rel="canonical"/><link href="https://diegodkrd-del.github.io/dktimber/" hreflang="en" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/pt/" hreflang="pt-BR" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/es/" hreflang="es" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/de/" hreflang="de" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/fr/" hreflang="fr" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/it/" hreflang="it" rel="alternate"/><style id="estatico-extra">
+.seletor-idiomas{all:initial;position:fixed;top:10px;right:10px;z-index:99998;display:flex;gap:2px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.12);border-radius:999px;padding:3px 5px;font:600 11px/1 system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.seletor-idiomas a{all:initial;cursor:pointer;font:600 11px/1 system-ui,sans-serif;color:#333;text-decoration:none;padding:5px 6px;border-radius:999px}
+.seletor-idiomas a[aria-current]{background:#333;color:#fff}
+.seletor-idiomas a:hover{text-decoration:underline}
+.wa-flutuante{position:fixed;right:16px;bottom:16px;z-index:99999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.bloco-whatsapp{display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:20px;border:1px solid rgba(0,0,0,.1);border-radius:12px}
+.bloco-whatsapp .botao-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff!important;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600}
+@media (max-width:768px){.seletor-idiomas{top:auto;bottom:16px;left:12px;right:auto}}
+</style></head>
+<body><div aria-label="Idioma" class="seletor-idiomas" role="navigation"><a href="../" hreflang="en" lang="en" title="English">EN</a><a href="../pt/" hreflang="pt-BR" lang="pt-BR" title="Português">PT</a><a aria-current="true" href="../es/" hreflang="es" lang="es" title="Español">ES</a><a href="../de/" hreflang="de" lang="de" title="Deutsch">DE</a><a href="../fr/" hreflang="fr" lang="fr" title="Français">FR</a><a href="../it/" hreflang="it" lang="it" title="Italiano">IT</a></div>
+<header>
+<a class="logo" href="#">DK <span>TIMBER</span></a>
+<nav>
+<a href="#about">Quiénes somos</a>
+<a href="#process">Cómo funciona</a>
+<a href="#expertise">Selección de especies</a>
+<a href="#gallery">Galería</a>
+<a href="#contact">Pedir presupuesto</a>
+</nav>
+</header>
+<section class="hero">
+<h1>La madera adecuada para cada aplicación</h1>
+<p>Sin los márgenes de los intermediarios: llevamos madera sudamericana de alto rendimiento directo del aserradero a constructoras, distribuidores y artesanos.</p>
+<a class="btn" href="#process">Conoce nuestro proceso</a>
+</section>
+<main class="container">
+
+<section id="about">
+<div class="section-header">
+<h2 class="section-title">Maderas duras directo del aserradero</h2>
+<p class="section-subtitle">Comprar madera sin supervisión técnica experta suele traer mucho desperdicio, alabeo y costos inflados. Tendemos el puente entre los aserraderos sudamericanos y los compradores norteamericanos para garantizar la integridad estructural y el máximo rendimiento.</p>
+</div>
+<div class="grid-3">
+<div class="card">
+<h3>Selección precisa según la aplicación</h3>
+<p>Cada proyecto de construcción exige valores específicos de dureza Janka, resistencia a la flexión (MOR) y resistencia natural a la pudrición. Relacionamos los requisitos de tu proyecto con la especie exacta de madera dura sudamericana que cumple las especificaciones sin exceder el presupuesto.</p>
+</div>
+<div class="card">
+<h3>Sin costos de intermediarios</h3>
+<p>Las cadenas habituales de importación de madera pasan por varios corredores, importadores y distribuidores regionales antes de llegar a tu patio. Negociamos tarifas por contenedor directamente con aserraderos socios y reducimos los márgenes intermedios hasta un 30 %.</p>
+</div>
+<div class="card">
+<h3>Auditoría de calidad rigurosa</h3>
+<p>Nuestro equipo realiza inspecciones presenciales antes de cargar el contenedor. Verificamos los límites de humedad, el cumplimiento de la clasificación, las dimensiones precisas de las tablas y el secado correcto en horno.</p>
+</div>
+</div>
+</section>
+
+<section class="process-section" id="process">
+<div class="section-header">
+<h2 class="section-title">Cómo funciona nuestro suministro</h2>
+<p class="section-subtitle">Desde las especificaciones estructurales iniciales hasta la entrega en tu patio, nuestra gestión integral mantiene tus proyectos abastecidos y dentro del presupuesto.</p>
+</div>
+<div class="process-steps">
+<div class="step">
+<div class="step-number">01</div>
+<h4>Consultoría del proyecto</h4>
+<p>Analizamos los requisitos de la obra, las cargas estructurales, la exposición a la intemperie y los objetivos estéticos para definir el perfil de madera ideal.</p>
+</div>
+<div class="step">
+<div class="step-number">02</div>
+<h4>Selección directa del aserradero</h4>
+<p>Negociamos el suministro por contenedor directamente con aserraderos sudamericanos certificados, asegurando descuentos por volumen y garantías estrictas de clasificación.</p>
+</div>
+<div class="step">
+<div class="step-number">03</div>
+<h4>Control de calidad en origen</h4>
+<p>Antes de la carga, cada lote pasa por una inspección presencial de humedad, integridad del núcleo, escuadrado de los cortes y cumplimiento de la tala sostenible.</p>
+</div>
+<div class="step">
+<div class="step-number">04</div>
+<h4>Logística y entrega en patio</h4>
+<p>Gestionamos todos los trámites aduaneros, las tasas portuarias y el transporte en camión directo hasta tu obra o centro de distribución regional.</p>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="section-header">
+<h2 class="section-title">Galería de inspecciones e inventario</h2>
+<p class="section-subtitle">Una mirada a nuestras operaciones en aserraderos sudamericanos, las inspecciones de madera y la preparación de contenedores.</p>
+</div>
+<div class="gallery-grid">
+<div class="gallery-card">
+<img alt="Inspección de madera dura" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-2.jpeg"/>
+<div class="gallery-caption">Selección y clasificación de la madera</div>
+</div>
+<div class="gallery-card">
+<img alt="Acopio de madera" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-3.jpeg"/>
+<div class="gallery-caption">Inventario secado en horno</div>
+</div>
+<div class="gallery-card">
+<img alt="Control de densidad" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-4.jpeg"/>
+<div class="gallery-caption">Pruebas de densidad y veta</div>
+</div>
+<div class="gallery-card">
+<img alt="Pilas de madera dura" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-5.jpeg"/>
+<div class="gallery-caption">Pilas paletizadas listas para exportar</div>
+</div>
+<div class="gallery-card">
+<img alt="Corte en el aserradero" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-6.jpeg"/>
+<div class="gallery-caption">Aserrado dimensional en el aserradero</div>
+</div>
+<div class="gallery-card">
+<img alt="Clasificación de troncos" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-7.jpeg"/>
+<div class="gallery-caption">Evaluación de calidad de troncos</div>
+</div>
+<div class="gallery-card">
+<img alt="Inspección de calidad de tablas" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-8.jpeg"/>
+<div class="gallery-caption">Verificación de acabado y cantos</div>
+</div>
+<div class="gallery-card">
+<img alt="Carga del contenedor" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-9.jpeg"/>
+<div class="gallery-caption">Preparación de la carga del contenedor</div>
+</div>
+<div class="gallery-card">
+<img alt="Logística de campo" decoding="async" src="../wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.24.jpeg"/>
+<div class="gallery-caption">Supervisión de la extracción</div>
+</div>
+<div class="gallery-card">
+<img alt="Envío de madera" decoding="async" src="../wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.25.jpeg"/>
+<div class="gallery-caption">Preparación del embarque en puerto</div>
+</div>
+<div class="gallery-card">
+<img alt="Control de contrachapado y tablas" decoding="async" src="../wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.25-1.jpeg"/>
+<div class="gallery-caption">Verificación de encolado y huecos en tableros</div>
+</div>
+<div class="gallery-card">
+<img alt="Patio de acopio final" decoding="async" src="../wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.26.jpeg"/>
+<div class="gallery-caption">Entrega en patio de acopio</div>
+</div>
+</div>
+</section>
+</main>
+<footer id="contact">
+<h3 style="margin-bottom: 0.5rem; color: #fff;">¿Listo para optimizar tu suministro de madera?</h3>
+<p>Contacta hoy con DK Timber y pide un presupuesto con entrega para tu próximo contenedor.</p>
+<div class="contato-dk"><a class="btn contato-wa" href="https://wa.me/5551991074142?text=%C2%A1Hola%2C%20DK%20Timber%21%20Quisiera%20un%20presupuesto%20de%20madera%20sudamericana." rel="noopener" target="_blank">Pedir presupuesto por WhatsApp</a><a class="btn contato-mail" href="mailto:kasper@dktimber.com?subject=Solicitud%20de%20presupuesto%20%E2%80%94%20DK%20Timber">E-mail kasper@dktimber.com</a><p class="contato-linha">WhatsApp +55 51 99107-4142 · <a href="mailto:kasper@dktimber.com">kasper@dktimber.com</a></p></div><p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--gold);">© 2026 DK Timber. Todos los derechos reservados.</p>
+</footer>
+<a aria-label="Habla con DK Timber por WhatsApp" class="wa-flutuante" href="https://wa.me/5551991074142?text=%C2%A1Hola%2C%20DK%20Timber%21%20Quisiera%20un%20presupuesto%20de%20madera%20sudamericana." rel="noopener" target="_blank" title="Habla con DK Timber por WhatsApp"><svg aria-hidden="true" fill="#fff" height="30" viewbox="0 0 24 24" width="30"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01Z"></path></svg></a></body>
+</html>

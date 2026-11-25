@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DK Timber | Approvisionnement en bois durs et bois sciés d'Amérique du Sud</title>
+<style>
+        :root {
+            --primary: #1b3015;
+            --primary-accent: #2d4a22;
+            --gold: #c59b27;
+            --sand: #f4efea;
+            --dark: #1a1a1a;
+            --text-muted: #555555;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--sand);
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+        }
+
+        .logo span { color: var(--gold); }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1.8rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(15, 26, 12, 0.75), rgba(15, 26, 12, 0.75)), url('../wp-content/uploads/2026/08/South-America-Lumber-Sourcing.jpeg') center/cover no-repeat;
+            color: #fff;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d8aa32;
+            transform: translateY(-2px);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+
+        /* Value & Expertise Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-accent);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* How It Works Steps */
+        .process-section {
+            background: #fff;
+            padding: 5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            position: relative;
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Image Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            background: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p { color: #cccccc; margin-top: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.8rem; }
+        }
+    </style>
+<meta content="Bois durs et bois sciés d'Amérique du Sud en direct de la scierie pour constructeurs, distributeurs et artisans : choix des essences, contrôle qualité sur place et logistique." name="description"/><style>.contato-dk{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:1.5rem 0 .5rem}.contato-dk .contato-wa{background:#25D366;color:#fff}.contato-dk .contato-mail{background:var(--gold);color:#1a1a1a}.contato-dk .contato-linha{flex-basis:100%;font-size:.9rem;margin-top:.5rem}.contato-dk .contato-linha a{color:#fff}.seletor-idiomas{top:auto!important;bottom:16px!important;left:12px!important;right:auto!important}</style><link href="https://diegodkrd-del.github.io/dktimber/fr/" rel="canonical"/><link href="https://diegodkrd-del.github.io/dktimber/" hreflang="en" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/pt/" hreflang="pt-BR" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/es/" hreflang="es" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/de/" hreflang="de" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/fr/" hreflang="fr" rel="alternate"/><link href="https://diegodkrd-del.github.io/dktimber/it/" hreflang="it" rel="alternate"/><style id="estatico-extra">
+.seletor-idiomas{all:initial;position:fixed;top:10px;right:10px;z-index:99998;display:flex;gap:2px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.12);border-radius:999px;padding:3px 5px;font:600 11px/1 system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.seletor-idiomas a{all:initial;cursor:pointer;font:600 11px/1 system-ui,sans-serif;color:#333;text-decoration:none;padding:5px 6px;border-radius:999px}
+.seletor-idiomas a[aria-current]{background:#333;color:#fff}
+.seletor-idiomas a:hover{text-decoration:underline}
+.wa-flutuante{position:fixed;right:16px;bottom:16px;z-index:99999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.bloco-whatsapp{display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:20px;border:1px solid rgba(0,0,0,.1);border-radius:12px}
+.bloco-whatsapp .botao-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff!important;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:600}
+@media (max-width:768px){.seletor-idiomas{top:auto;bottom:16px;left:12px;right:auto}}
+</style></head>
+<body><div aria-label="Langue" class="seletor-idiomas" role="navigation"><a href="../" hreflang="en" lang="en" title="English">EN</a><a href="../pt/" hreflang="pt-BR" lang="pt-BR" title="Português">PT</a><a href="../es/" hreflang="es" lang="es" title="Español">ES</a><a href="../de/" hreflang="de" lang="de" title="Deutsch">DE</a><a aria-current="true" href="../fr/" hreflang="fr" lang="fr" title="Français">FR</a><a href="../it/" hreflang="it" lang="it" title="Italiano">IT</a></div>
+<header>
+<a class="logo" href="#">DK <span>TIMBER</span></a>
+<nav>
+<a href="#about">À propos</a>
+<a href="#process">Fonctionnement</a>
+<a href="#expertise">Choix des essences</a>
+<a href="#gallery">Galerie</a>
+<a href="#contact">Demander un devis</a>
+</nav>
+</header>
+<section class="hero">
+<h1>Le bon bois pour le bon usage</h1>
+<p>Sans les marges des intermédiaires, nous fournissons aux constructeurs, distributeurs et artisans du bois sud-américain haute performance, directement de la scierie.</p>
+<a class="btn" href="#process">Découvrir notre méthode</a>
+</section>
+<main class="container">
+
+<section id="about">
+<div class="section-header">
+<h2 class="section-title">Bois durs en direct de la scierie</h2>
+<p class="section-subtitle">Acheter du bois sans suivi technique expert entraîne souvent beaucoup de rebuts, des déformations et des coûts gonflés. Nous faisons le lien entre les scieries d'Amérique du Sud et les acheteurs nord-américains pour garantir l'intégrité structurelle et un rendement maximal.</p>
+</div>
+<div class="grid-3">
+<div class="card">
+<h3>Adéquation précise à l'usage</h3>
+<p>Chaque projet de construction exige des valeurs précises de dureté Janka, de résistance à la flexion (MOR) et de résistance naturelle à la pourriture. Nous associons vos exigences à l'essence de bois dur sud-américain exacte qui répond au cahier des charges, sans dépasser le budget.</p>
+</div>
+<div class="card">
+<h3>Sans frais d'intermédiaires</h3>
+<p>Les circuits d'importation classiques passent par plusieurs courtiers, importateurs et distributeurs régionaux avant d'arriver dans votre dépôt. Nous négocions des tarifs par conteneur directement avec des scieries partenaires et réduisons les marges intermédiaires jusqu'à 30 %.</p>
+</div>
+<div class="card">
+<h3>Contrôle qualité rigoureux</h3>
+<p>Notre équipe effectue des inspections sur place avant le chargement du conteneur. Nous vérifions les seuils d'humidité, la conformité au classement, les dimensions exactes des planches et le bon séchage en séchoir.</p>
+</div>
+</div>
+</section>
+
+<section class="process-section" id="process">
+<div class="section-header">
+<h2 class="section-title">Comment fonctionne notre approvisionnement</h2>
+<p class="section-subtitle">Des spécifications structurelles initiales à la livraison sur votre dépôt, notre gestion de bout en bout garde vos projets approvisionnés et dans le budget.</p>
+</div>
+<div class="process-steps">
+<div class="step">
+<div class="step-number">01</div>
+<h4>Étude du projet</h4>
+<p>Nous analysons les exigences du chantier, les charges structurelles, l'exposition aux intempéries et les objectifs esthétiques pour définir le profil de bois idéal.</p>
+</div>
+<div class="step">
+<div class="step-number">02</div>
+<h4>Choix direct de la scierie</h4>
+<p>Nous négocions l'approvisionnement par conteneur directement avec des scieries sud-américaines certifiées, avec des remises sur volume et des garanties de classement strictes.</p>
+</div>
+<div class="step">
+<div class="step-number">03</div>
+<h4>Contrôle qualité sur place</h4>
+<p>Avant le chargement, chaque lot est inspecté sur place : humidité, intégrité du cœur, équerrage des coupes et respect d'une exploitation durable.</p>
+</div>
+<div class="step">
+<div class="step-number">04</div>
+<h4>Logistique &amp; livraison</h4>
+<p>Nous gérons le dédouanement, les taxes portuaires et le transport par camion jusqu'à votre chantier ou votre dépôt régional.</p>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="section-header">
+<h2 class="section-title">Galerie : inspections &amp; stocks</h2>
+<p class="section-subtitle">Un aperçu de nos opérations en scierie en Amérique du Sud, des inspections du bois et de la préparation des conteneurs.</p>
+</div>
+<div class="gallery-grid">
+<div class="gallery-card">
+<img alt="Inspection du bois dur" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-2.jpeg"/>
+<div class="gallery-caption">Sélection &amp; classement du bois</div>
+</div>
+<div class="gallery-card">
+<img alt="Stock de bois" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-3.jpeg"/>
+<div class="gallery-caption">Stock séché en séchoir</div>
+</div>
+<div class="gallery-card">
+<img alt="Contrôle de densité" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-4.jpeg"/>
+<div class="gallery-caption">Tests de densité &amp; de fil</div>
+</div>
+<div class="gallery-card">
+<img alt="Piles de bois dur" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-5.jpeg"/>
+<div class="gallery-caption">Piles palettisées prêtes à l'export</div>
+</div>
+<div class="gallery-card">
+<img alt="Découpe en scierie" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-6.jpeg"/>
+<div class="gallery-caption">Sciage aux dimensions en scierie</div>
+</div>
+<div class="gallery-card">
+<img alt="Tri des grumes" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-7.jpeg"/>
+<div class="gallery-caption">Évaluation de la qualité des grumes</div>
+</div>
+<div class="gallery-card">
+<img alt="Contrôle qualité des planches" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-8.jpeg"/>
+<div class="gallery-caption">Vérification de la finition &amp; des chants</div>
+</div>
+<div class="gallery-card">
+<img alt="Chargement du conteneur" decoding="async" src="../wp-content/uploads/2026/08/South-America-Lumber-Sourcing-9.jpeg"/>
+<div class="gallery-caption">Préparation du chargement du conteneur</div>
+</div>
+<div class="gallery-card">
+<img alt="Logistique sur le terrain" decoding="async" src="../wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.24.jpeg"/>
+<div class="gallery-caption">Suivi de l'exploitation</div>
+</div>
+<div class="gallery-card">
+<img alt="Expédition de bois" decoding="async" src="../wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.25.jpeg"/>
+<div class="gallery-caption">Préparation de l'expédition au port</div>
+</div>
+<div class="gallery-card">
+<img alt="Contrôle du contreplaqué &amp; des planches" decoding="async" src="../wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.25-1.jpeg"/>
+<div class="gallery-caption">Vérification du collage &amp; des vides des panneaux</div>
+</div>
+<div class="gallery-card">
+<img alt="Parc de stockage final" decoding="async" src="../wp-content/uploads/2026/08/WhatsApp-Image-2026-08-10-at-03.43.26.jpeg"/>
+<div class="gallery-caption">Livraison au parc de stockage</div>
+</div>
+</div>
+</section>
+</main>
+<footer id="contact">
+<h3 style="margin-bottom: 0.5rem; color: #fff;">Prêt à optimiser votre approvisionnement en bois ?</h3>
+<p>Contactez DK Timber dès aujourd'hui pour un devis livré pour votre prochain conteneur.</p>
+<div class="contato-dk"><a class="btn contato-wa" href="https://wa.me/5551991074142?text=Bonjour%20DK%20Timber%20%21%20J%27aimerais%20un%20devis%20pour%20du%20bois%20sud-am%C3%A9ricain." rel="noopener" target="_blank">Demander un devis sur WhatsApp</a><a class="btn contato-mail" href="mailto:kasper@dktimber.com?subject=Demande%20de%20devis%20%E2%80%94%20DK%20Timber">E-mail kasper@dktimber.com</a><p class="contato-linha">WhatsApp +55 51 99107-4142 · <a href="mailto:kasper@dktimber.com">kasper@dktimber.com</a></p></div><p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--gold);">© 2026 DK Timber. Tous droits réservés.</p>
+</footer>
+<a aria-label="Écrire à DK Timber sur WhatsApp" class="wa-flutuante" href="https://wa.me/5551991074142?text=Bonjour%20DK%20Timber%20%21%20J%27aimerais%20un%20devis%20pour%20du%20bois%20sud-am%C3%A9ricain." rel="noopener" target="_blank" title="Écrire à DK Timber sur WhatsApp"><svg aria-hidden="true" fill="#fff" height="30" viewbox="0 0 24 24" width="30"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01Z"></path></svg></a></body>
+</html>
